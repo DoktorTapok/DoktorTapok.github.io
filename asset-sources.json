@@ -1,0 +1,154 @@
+[
+  {
+    "name": "hanoi-ru-1",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-01-colors.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-2",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-02-mystery.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-3",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-03-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-4",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-04-win.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-1",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-01-colors.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-2",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-02-mystery.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-3",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-03-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-4",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-04-win.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-classic",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-09_v2/Source/01-cube-en.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-ru-torus",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-10_Update/Source/Screenshots/torus-Russian.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-ru-challenge",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-10_Update/Source/Screenshots/challenge-Russian.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-en-torus",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-10_Update/Source/Screenshots/torus-English.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-en-challenge",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-10_Update/Source/Screenshots/challenge-English.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-reactor",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-10_Reactor/Source/Screenshots/reactor-Russian.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-1",
+    "source": "https://static.rustore.ru/2026/7/11/26/apk/2063721258/content/SCREENSHOT/042d092e-d3cb-4d8a-a7fd-01d0a24119ec.png",
+    "originalSize": [
+      941,
+      1672
+    ]
+  },
+  {
+    "name": "cascade-2",
+    "source": "https://static.rustore.ru/2026/6/8/9f/apk/2063721258/content/SCREENSHOT/c9948373-4575-43de-a24a-1806d25c9081.png",
+    "originalSize": [
+      847,
+      1507
+    ]
+  },
+  {
+    "name": "cascade-3",
+    "source": "https://static.rustore.ru/2026/7/11/1e/apk/2063721258/content/SCREENSHOT/4bd24a1d-82b7-45e3-a793-947d1745764e.png",
+    "originalSize": [
+      940,
+      1672
+    ]
+  },
+  {
+    "name": "cascade-4",
+    "source": "https://static.rustore.ru/2026/6/8/a7/apk/2063721258/content/SCREENSHOT/72e2f85a-37f3-4ced-a196-ac6e3b81d92e.png",
+    "originalSize": [
+      941,
+      1672
+    ]
+  },
+  {
+    "name": "hanoi-icon",
+    "source": "HanoyTower/marketing/2026-10/branding/app-icon-512.png",
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+]

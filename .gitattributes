@@ -1,0 +1,4 @@
+* text=auto
+dist/app-ads.txt -text
+*.webp binary
+*.png binary
