@@ -25,3 +25,14 @@ const http = await fetch('http://doktortapok.github.io/app-ads.txt',{redirect:'m
 assert([301,302,307,308].includes(http.status));
 assert.equal(http.headers.get('location'),'https://doktortapok.github.io/app-ads.txt');
 console.log('PASS HTTP redirects to HTTPS.');
+const media = JSON.parse(await readFile(path.join(root, 'media-sources.json'), 'utf8'))[0];
+const trailer = await fetch(origin + '/' + media.file, {signal:AbortSignal.timeout(60000)});
+assert.equal(trailer.status, 200);
+assert((trailer.headers.get('content-type') || '').includes('video/mp4'));
+const trailerBytes = Buffer.from(await trailer.arrayBuffer());
+assert.equal(createHash('sha256').update(trailerBytes).digest('hex'), media.sha256, 'Published video differs from the approved source.');
+console.log(`PASS trailer: HTTP 200, video/mp4, approved source bytes (${trailerBytes.length}).`);
+const partial = await fetch(origin + '/' + media.file, {headers:{Range:'bytes=0-1023'},signal:AbortSignal.timeout(30000)});
+assert.equal(partial.status,206,'Video seeking requires range requests.');
+assert.equal((await partial.arrayBuffer()).byteLength,1024);
+console.log('PASS trailer range request: HTTP 206, 1024 bytes.');

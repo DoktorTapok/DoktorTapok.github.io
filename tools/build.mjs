@@ -40,12 +40,15 @@ const copy = {
       {
         id: 'arrows-cube', theme: 'cube', number: '02', tag: 'ОБЪЁМ · СТРЕЛКИ · ПЕРСПЕКТИВА', title: 'Arrows<br>Cube', english: 'Arrows Cube',
         short: 'Посмотрите на задачу с другой стороны.',
-        text: 'Вращайте фигуру, распутывайте стрелки и освобождайте грани одну за другой. В классике можно подумать без спешки, а в «Реакторе» — проверить свой темп.',
-        stats: ['3 000 уровней', '6 фигур', '12 испытаний'],
+        text: 'От первого куба до хардкорного черепа: вращайте семь объёмных фигур, ищите свободные пути и убирайте стрелки в правильном порядке. В классике нет таймера, а в обновлённом «Реакторе» каждый ход готовит новую цепную реакцию.',
+        stats: ['3 500 уровней', '7 фигур', '12 испытаний'],
+        highlight: ['НОВАЯ ФИГУРА', 'Череп: 500 уровней с отражениями', 'Голубые зеркальные кромки глазниц и носа меняют направление стрелок. Проверяйте путь после каждого отскока. Череп открывается после прохождения 300 разных основных уровней любых фигур.'],
         rules: ['Вращайте и приближайте фигуру, чтобы рассмотреть пути стрелок.', 'Нажимайте на стрелку, перед которой свободен путь. Заблокированная стрелка отнимает жизнь.', 'Уберите все стрелки. Подсказка и стирание помогут в сложной ситуации.'],
-        note: ['ЕЩЁ ОДИН РЕЖИМ', '«Реактор»: держите энергию, собирайте серии и ставьте рекорд в бесконечных волнах.'],
-        images: ['cube-classic','cube-ru-torus','cube-ru-challenge','cube-reactor'],
-        captions: ['Рассмотрите все грани', 'Освойте новую геометрию', 'Пройдите особые испытания', 'Зарядите «Реактор»'],
+        note: ['РЕАКТОР: ЦЕПНЫЕ РЕАКЦИИ', 'Обычные ходы накапливают общий заряд. Выбирайте способность, поддерживайте энергию и собирайте серии до AAA: каждое удаление способностью тоже повышает комбо и множитель.'],
+        abilities: [['Пробой', 'Пробивная стрелка расчищает препятствия на своём пути.'], ['Импульс', 'Убирает стрелки, пересекающие выбранный участок 3×3.'], ['Стазис', 'На время останавливает расход энергии.']],
+        images: ['cube-ru-skull','cube-classic','cube-ru-challenge','cube-ru-reactor-202611'],
+        captions: ['Череп: отражения и новый вызов', 'Семь фигур, 3 500 уровней', 'Пройдите особые испытания', 'Пробой, импульс и стазис'],
+        trailer: {title: 'Семь фигур. Один ролик.', text: '32 секунды настоящего геймплея: от куба до черепа, от спокойного решения до каскада попаданий в «Реакторе».', label: 'Геймплей Arrows Cube — 32 секунды', meta: '32 секунды · Русские титры · Звук по желанию', chapters: [['00:00', 'Семь фигур и отражения черепа'], ['00:14', 'Порталы, зеркала, замки и лёд'], ['00:18', 'Обновлённый «Реактор» и три способности']], fallback: 'Открыть видео', poster: 'cube-ru-skull'},
         rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
       },
       {
@@ -89,12 +92,15 @@ const copy = {
       {
         id: 'arrows-cube', theme: 'cube', number: '02', tag: 'SHAPES · ARROWS · PERSPECTIVE', title: 'Arrows<br>Cube', english: 'Arrows Cube',
         short: 'A fresh perspective changes everything.',
-        text: 'Rotate the shape, untangle the arrows and clear every face. Take your time in classic puzzles, or pick up the pace in Reactor mode.',
-        stats: ['3,000 levels', '6 shapes', '12 challenges'],
+        text: 'From your first cube to the hardcore skull: rotate seven 3D shapes, find clear paths and remove arrows in the right order. Classic has no timer; the updated Reactor turns clever moves into powerful chain reactions.',
+        stats: ['3,500 levels', '7 shapes', '12 challenges'],
+        highlight: ['NEW SHAPE', 'Skull: 500 levels with reflections', 'Blue mirror rims around the eye sockets and nose redirect arrows. Check the route after every bounce. Unlock the skull by completing 300 different main levels across any shapes.'],
         rules: ['Rotate and zoom in to see where the arrows lead.', 'Tap an arrow with a clear path. A blocked arrow costs a life.', 'Remove every arrow. A hint or an eraser can help when you get stuck.'],
-        note: ['ANOTHER WAY TO PLAY', 'Reactor: keep the energy flowing, build combos and beat your record through endless waves.'],
-        images: ['cube-classic','cube-en-torus','cube-en-challenge','cube-reactor'],
-        captions: ['Explore every face', 'Discover a new geometry', 'Take on special challenges', 'Power up the Reactor'],
+        note: ['REACTOR: CHAIN REACTIONS', 'Ordinary moves build shared charge. Choose an ability, keep your energy up and climb to AAA: every arrow removed by an ability also extends your chain and raises the multiplier.'],
+        abilities: [['Pierce', 'Send an arrow through the blockers along its path.'], ['Pulse', 'Clear arrows touching a selected 3×3 area.'], ['Stasis', 'Pause energy drain for a short breather.']],
+        images: ['cube-en-skull','cube-classic','cube-en-challenge','cube-en-reactor-202611'],
+        captions: ['Skull: reflections and a new challenge', 'Seven shapes, 3,500 levels', 'Take on special challenges', 'Pierce, Pulse and Stasis'],
+        trailer: {title: 'Seven shapes. One trailer.', text: '32 seconds of real gameplay: from the cube to the skull, from thoughtful puzzles to a chain of hits in Reactor.', label: 'Arrows Cube gameplay — 32 seconds, Russian on-screen text', meta: '32 seconds · Russian on-screen text · Optional sound', chapters: [['00:00', 'Seven shapes and skull reflections'], ['00:14', 'Portals, mirrors, locks and ice'], ['00:18', 'Updated Reactor and three abilities']], fallback: 'Open video', poster: 'cube-en-skull'},
         rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
       },
       {
@@ -121,8 +127,9 @@ function renderGame(g, t) {
       <h2 id="${g.id}-title">${g.title.replaceAll('<br>', '<br> ')}</h2>
       <p class="game-short">${g.short}</p><p class="game-description">${g.text}</p>
       <ul class="game-stats" aria-label="${g.english}">${g.stats.map(s => `<li>${s}</li>`).join('')}</ul>
+      ${g.highlight ? `<aside class="game-update"><p class="eyebrow">${g.highlight[0]}</p><h3>${g.highlight[1]}</h3><p>${g.highlight[2]}</p></aside>` : ''}
       <h3>${t.how}</h3><ol class="rules">${g.rules.map(s => `<li>${s}</li>`).join('')}</ol>
-      ${g.note ? `<aside class="reactor-note"><span class="spark" aria-hidden="true">✳</span><p><strong>${g.note[0]}</strong>${g.note[1]}</p></aside>` : ''}
+      ${g.note ? `<aside class="reactor-note"><span class="spark" aria-hidden="true">✳</span><div><p><strong>${g.note[0]}</strong>${g.note[1]}</p>${g.abilities ? `<ul class="reactor-abilities">${g.abilities.map(([name, text]) => `<li><strong>${name}</strong><span>${text}</span></li>`).join('')}</ul>` : ''}</div></aside>` : ''}
       <div class="store-links"><a href="https://www.rustore.ru/catalog/app/${g.rustore}" target="_blank" rel="noopener noreferrer" aria-label="${g.english} — RuStore">${download}<span><small>${t.platform}</small>RuStore</span>${arrow}</a><a href="https://appgallery.huawei.com/app/${g.huawei}" target="_blank" rel="noopener noreferrer" aria-label="${g.english} — Huawei AppGallery">${download}<span><small>HUAWEI</small>AppGallery</span>${arrow}</a></div>
     </div>
     <div class="gallery" aria-label="${t.screenshots}: ${g.english}">
@@ -131,8 +138,11 @@ function renderGame(g, t) {
       </div>
       <div class="gallery-footer"><p>${t.galleryHint}</p><div class="gallery-controls" hidden><button class="gallery-prev icon-button" aria-label="${t.previous}">${chevron}</button><span class="gallery-count" aria-live="polite">01 / 04</span><button class="gallery-next icon-button" aria-label="${t.next}">${chevron}</button></div></div>
     </div>
+    ${g.trailer ? `<section class="game-trailer" aria-labelledby="${g.id}-trailer-title"><div class="trailer-copy"><p class="eyebrow">${langFor(t) === 'ru' ? 'ГЕЙМПЛЕЙ' : 'GAMEPLAY'}</p><h3 id="${g.id}-trailer-title">${g.trailer.title}</h3><p>${g.trailer.text}</p><ol class="trailer-chapters">${g.trailer.chapters.map(([time, text]) => `<li><span>${time}</span>${text}</li>`).join('')}</ol><p class="trailer-meta">${g.trailer.meta}</p><a class="text-link" href="/assets/video/arrows-cube-gameplay-2026-11.mp4">${g.trailer.fallback}${arrow}</a></div><video controls playsinline preload="none" width="1080" height="1920" poster="/assets/images/${g.trailer.poster}-480.webp" aria-label="${g.trailer.label}"><source src="/assets/video/arrows-cube-gameplay-2026-11.mp4" type="video/mp4"><a href="/assets/video/arrows-cube-gameplay-2026-11.mp4">${g.trailer.fallback}</a></video></section>` : ''}
   </section>`;
 }
+
+function langFor(t) { return t === copy.ru ? 'ru' : 'en'; }
 
 for (const lang of ['ru', 'en']) {
   const t = copy[lang];
@@ -142,7 +152,7 @@ for (const lang of ['ru', 'en']) {
 <html lang="${lang}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light"><meta name="theme-color" content="#f7f8f2">
   <title>${t.title}</title><meta name="description" content="${t.description}">
   <link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="ru" href="${origin}/"><link rel="alternate" hreflang="en" href="${origin}/en/"><link rel="alternate" hreflang="x-default" href="${origin}/">

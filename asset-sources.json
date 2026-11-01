@@ -150,5 +150,37 @@
       512,
       512
     ]
+  },
+  {
+    "name": "cube-ru-skull",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Skull/Source/Screenshots/skull-level1-ru.png",
+    "originalSize": [
+      900,
+      1600
+    ]
+  },
+  {
+    "name": "cube-ru-reactor-202611",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Video_RU_v2/Source/QA/reactor-Russian-089.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-en-skull",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Skull/Source/Screenshots/skull-level1-en.png",
+    "originalSize": [
+      900,
+      1600
+    ]
+  },
+  {
+    "name": "cube-en-reactor-202611",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Video_RU_v2/Source/QA/reactor-English-088.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
   }
 ]

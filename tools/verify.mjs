@@ -19,6 +19,12 @@ assert(records.some(line => line.startsWith('yandex.com,') && line.includes('DIR
 const sourceArg = process.argv.find(arg => arg.startsWith('--original='));
 if (sourceArg) assert(bytes.equals(await readFile(sourceArg.slice('--original='.length))), 'File differs from the owner-provided original.');
 
+const media = JSON.parse(await readFile(path.join(root, 'media-sources.json'), 'utf8'))[0];
+const videoBytes = await readFile(path.join(dist, media.file));
+assert.equal(createHash('sha256').update(videoBytes).digest('hex'), media.sha256, 'Trailer must match the approved gameplay source.');
+assert.equal(videoBytes.length, media.bytes);
+assert.equal(videoBytes.subarray(4, 8).toString(), 'ftyp', 'Trailer must be an MP4 file.');
+
 for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   const html = await readFile(path.join(dist, file), 'utf8');
   assert(html.includes(`<html lang="${lang}">`));
@@ -28,12 +34,20 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   assert.equal((html.match(/https:\/\/appgallery\.huawei\.com\/app\//g) || []).length, 3);
   assert(html.includes('href="/app-ads.txt"'));
   assert(html.includes('Content-Security-Policy'));
+  assert(html.includes("media-src 'self'"), 'Local video must be permitted by CSP.');
+  const videos = [...html.matchAll(/<video\b[^>]*>/g)];
+  assert.equal(videos.length, 1, 'Exactly one Arrows Cube trailer is expected.');
+  assert(videos[0][0].includes('controls') && videos[0][0].includes('playsinline'));
+  assert(videos[0][0].includes('preload="none"') && !videos[0][0].includes('autoplay'), 'Video must load and play on request.');
+  assert(html.includes('3 500 уровней') || html.includes('3,500 levels'), 'Updated level count is required.');
+  assert(html.includes('7 фигур') || html.includes('7 shapes'), 'Updated shape count is required.');
+  for (const caption of lang === 'ru' ? ['Пробой','Импульс','Стазис','300 разных'] : ['Pierce','Pulse','Stasis','300 different']) assert(html.includes(caption), `Missing update feature: ${caption}`);
   assert(!/<script\b[^>]*>\s*[^<\s]/.test(html), 'Inline scripts are forbidden.');
   assert(!/\son[a-z]+\s*=/.test(html), 'Inline handlers are forbidden.');
   assert(!/<(?:iframe|form)\b/i.test(html), 'No embedded apps or forms.');
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(ids.length, new Set(ids).size, 'Duplicate element IDs.');
-  for (const match of html.matchAll(/\b(?:src|href)="([^"]+)"/g)) {
+  for (const match of html.matchAll(/\b(?:src|href|poster)="([^"]+)"/g)) {
     const value = match[1];
     if (value.startsWith('#')) {assert(ids.includes(value.slice(1)), `Unknown anchor ${value}`);continue;}
     if (/^(https:|mailto:)/.test(value)) continue;
