@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const origin = 'https://doktortapok.github.io';
+const cubeTrailer = '/assets/video/arrows-cube-gameplay-heart.mp4';
 const arrow = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const chevron = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const download = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -40,15 +41,15 @@ const copy = {
       {
         id: 'arrows-cube', theme: 'cube', number: '02', tag: 'ОБЪЁМ · СТРЕЛКИ · ПЕРСПЕКТИВА', title: 'Arrows<br>Cube', english: 'Arrows Cube',
         short: 'Посмотрите на задачу с другой стороны.',
-        text: 'От первого куба до хардкорного черепа: вращайте семь объёмных фигур, ищите свободные пути и убирайте стрелки в правильном порядке. В классике нет таймера, а в обновлённом «Реакторе» каждый ход готовит новую цепную реакцию.',
-        stats: ['3 500 уровней', '7 фигур', '12 испытаний'],
-        highlight: ['НОВАЯ ФИГУРА', 'Череп: 500 уровней с отражениями', 'Голубые зеркальные кромки глазниц и носа меняют направление стрелок. Проверяйте путь после каждого отскока. Череп открывается после прохождения 300 разных основных уровней любых фигур.'],
+        text: 'Вращайте объёмные фигуры, ищите свободные пути и убирайте стрелки в правильном порядке. В классике можно играть в своём темпе. В «Реакторе» энергия убывает, а удачные ходы пополняют её.',
+        stats: ['4 000 уровней', '8 фигур', '24 испытания'],
+        highlight: ['ПРЕДПРОСМОТР ОБНОВЛЕНИЯ', 'Сердце и 12 новых испытаний', 'В кампании сердца 500 уровней с цветными ключами и замками. В испытаниях ищите выходы, выпускайте движущиеся стрелки и запускайте разветвители ×4, чтобы расчистить поле. «Путь мастера» вырос до 60 ступеней.'],
         rules: ['Вращайте и приближайте фигуру, чтобы рассмотреть пути стрелок.', 'Нажимайте на стрелку, перед которой свободен путь. Заблокированная стрелка отнимает жизнь.', 'Уберите все стрелки. Подсказка и стирание помогут в сложной ситуации.'],
         note: ['РЕАКТОР: ЦЕПНЫЕ РЕАКЦИИ', 'Обычные ходы накапливают общий заряд. Выбирайте способность, поддерживайте энергию и собирайте серии до AAA: каждое удаление способностью тоже повышает комбо и множитель.'],
         abilities: [['Пробой', 'Пробивная стрелка расчищает препятствия на своём пути.'], ['Импульс', 'Убирает стрелки, пересекающие выбранный участок 3×3.'], ['Стазис', 'На время останавливает расход энергии.']],
-        images: ['cube-ru-skull','cube-classic','cube-ru-challenge','cube-ru-reactor-202611'],
-        captions: ['Череп: отражения и новый вызов', 'Семь фигур, 3 500 уровней', 'Пройдите особые испытания', 'Пробой, импульс и стазис'],
-        trailer: {title: 'Семь фигур. Один ролик.', text: '32 секунды настоящего геймплея: от куба до черепа, от спокойного решения до каскада попаданий в «Реакторе».', label: 'Геймплей Arrows Cube — 32 секунды', meta: '32 секунды · Русские титры · Звук по желанию', chapters: [['00:00', 'Семь фигур и отражения черепа'], ['00:14', 'Порталы, зеркала, замки и лёд'], ['00:18', 'Обновлённый «Реактор» и три способности']], fallback: 'Открыть видео', poster: 'cube-ru-skull'},
+        images: ['cube-ru-new-shapes','cube-ru-challenges-24','cube-classic','cube-ru-reactor-202611'],
+        captions: ['Череп с зеркальными кромками и рубиновое сердце', '24 испытания с выходами, разветвителями и бомбами', 'Вращайте фигуру и ищите свободный путь', 'Пробой, импульс и стазис'],
+        trailer: {title: 'Геймплей обновления', text: 'Восемь фигур в разных скинах, цепная реакция в «Ледяной цепи» и три способности «Реактора».', label: 'Геймплей Arrows Cube — 38 секунд', meta: '38 секунд · Русские титры', chapters: [['00:00', 'Восемь фигур, включая череп и сердце'], ['00:14', 'Единственный выход, Змейка и Ледяная цепь'], ['00:24', 'Реактор: пробой, импульс и стазис']], fallback: 'Открыть видео', poster: 'cube-heart-trailer-poster'},
         rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
       },
       {
@@ -92,15 +93,15 @@ const copy = {
       {
         id: 'arrows-cube', theme: 'cube', number: '02', tag: 'SHAPES · ARROWS · PERSPECTIVE', title: 'Arrows<br>Cube', english: 'Arrows Cube',
         short: 'A fresh perspective changes everything.',
-        text: 'From your first cube to the hardcore skull: rotate seven 3D shapes, find clear paths and remove arrows in the right order. Classic has no timer; the updated Reactor turns clever moves into powerful chain reactions.',
-        stats: ['3,500 levels', '7 shapes', '12 challenges'],
-        highlight: ['NEW SHAPE', 'Skull: 500 levels with reflections', 'Blue mirror rims around the eye sockets and nose redirect arrows. Check the route after every bounce. Unlock the skull by completing 300 different main levels across any shapes.'],
+        text: 'Rotate 3D shapes, find clear paths and remove arrows in the right order. Play Classic at your own pace or keep your energy up with every move in Reactor.',
+        stats: ['4,000 levels', '8 shapes', '24 challenges'],
+        highlight: ['UPDATE PREVIEW', 'The heart and 12 new challenges', 'The heart campaign brings 500 levels with colored keys and locks. In challenges, find exits, release moving arrows and trigger ×4 splitters to clear the board. The Master’s Path now has 60 tiers.'],
         rules: ['Rotate and zoom in to see where the arrows lead.', 'Tap an arrow with a clear path. A blocked arrow costs a life.', 'Remove every arrow. A hint or an eraser can help when you get stuck.'],
         note: ['REACTOR: CHAIN REACTIONS', 'Ordinary moves build shared charge. Choose an ability, keep your energy up and climb to AAA: every arrow removed by an ability also extends your chain and raises the multiplier.'],
         abilities: [['Pierce', 'Send an arrow through the blockers along its path.'], ['Pulse', 'Clear arrows touching a selected 3×3 area.'], ['Stasis', 'Pause energy drain for a short breather.']],
-        images: ['cube-en-skull','cube-classic','cube-en-challenge','cube-en-reactor-202611'],
-        captions: ['Skull: reflections and a new challenge', 'Seven shapes, 3,500 levels', 'Take on special challenges', 'Pierce, Pulse and Stasis'],
-        trailer: {title: 'Seven shapes. One trailer.', text: '32 seconds of real gameplay: from the cube to the skull, from thoughtful puzzles to a chain of hits in Reactor.', label: 'Arrows Cube gameplay — 32 seconds, Russian on-screen text', meta: '32 seconds · Russian on-screen text · Optional sound', chapters: [['00:00', 'Seven shapes and skull reflections'], ['00:14', 'Portals, mirrors, locks and ice'], ['00:18', 'Updated Reactor and three abilities']], fallback: 'Open video', poster: 'cube-en-skull'},
+        images: ['cube-en-new-shapes','cube-en-challenges-24','cube-classic','cube-en-reactor-202611'],
+        captions: ['The mirror-rimmed skull and Ruby heart', '24 challenges with exits, splitters and bombs', 'Rotate the shape and find a clear path', 'Pierce, Pulse and Stasis'],
+        trailer: {title: 'Gameplay from the update', text: 'Eight shapes in different skins, a chain reaction in Ice Chain and three Reactor abilities.', label: 'Arrows Cube gameplay — 38 seconds, Russian on-screen text', meta: '38 seconds · Russian on-screen text', chapters: [['00:00', 'Eight shapes, including the skull and heart'], ['00:14', 'Only Exit, Snake and Ice Chain'], ['00:24', 'Reactor: Pierce, Pulse and Stasis']], fallback: 'Open video', poster: 'cube-heart-trailer-poster'},
         rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
       },
       {
@@ -138,7 +139,7 @@ function renderGame(g, t) {
       </div>
       <div class="gallery-footer"><p>${t.galleryHint}</p><div class="gallery-controls" hidden><button class="gallery-prev icon-button" aria-label="${t.previous}">${chevron}</button><span class="gallery-count" aria-live="polite">01 / 04</span><button class="gallery-next icon-button" aria-label="${t.next}">${chevron}</button></div></div>
     </div>
-    ${g.trailer ? `<section class="game-trailer" aria-labelledby="${g.id}-trailer-title"><div class="trailer-copy"><p class="eyebrow">${langFor(t) === 'ru' ? 'ГЕЙМПЛЕЙ' : 'GAMEPLAY'}</p><h3 id="${g.id}-trailer-title">${g.trailer.title}</h3><p>${g.trailer.text}</p><ol class="trailer-chapters">${g.trailer.chapters.map(([time, text]) => `<li><span>${time}</span>${text}</li>`).join('')}</ol><p class="trailer-meta">${g.trailer.meta}</p><a class="text-link" href="/assets/video/arrows-cube-gameplay-2026-11.mp4">${g.trailer.fallback}${arrow}</a></div><video controls playsinline preload="none" width="1080" height="1920" poster="/assets/images/${g.trailer.poster}-480.webp" aria-label="${g.trailer.label}"><source src="/assets/video/arrows-cube-gameplay-2026-11.mp4" type="video/mp4"><a href="/assets/video/arrows-cube-gameplay-2026-11.mp4">${g.trailer.fallback}</a></video></section>` : ''}
+    ${g.trailer ? `<section class="game-trailer" aria-labelledby="${g.id}-trailer-title"><div class="trailer-copy"><p class="eyebrow">${langFor(t) === 'ru' ? 'ГЕЙМПЛЕЙ' : 'GAMEPLAY'}</p><h3 id="${g.id}-trailer-title">${g.trailer.title}</h3><p>${g.trailer.text}</p><ol class="trailer-chapters">${g.trailer.chapters.map(([time, text]) => `<li><span>${time}</span>${text}</li>`).join('')}</ol><p class="trailer-meta">${g.trailer.meta}</p><a class="text-link" href="${cubeTrailer}">${g.trailer.fallback}${arrow}</a></div><video controls playsinline preload="none" width="1080" height="1920" poster="/assets/images/${g.trailer.poster}-480.webp" aria-label="${g.trailer.label}"><source src="${cubeTrailer}" type="video/mp4"><a href="${cubeTrailer}">${g.trailer.fallback}</a></video></section>` : ''}
   </section>`;
 }
 

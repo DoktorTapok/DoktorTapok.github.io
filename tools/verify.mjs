@@ -39,9 +39,12 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   assert.equal(videos.length, 1, 'Exactly one Arrows Cube trailer is expected.');
   assert(videos[0][0].includes('controls') && videos[0][0].includes('playsinline'));
   assert(videos[0][0].includes('preload="none"') && !videos[0][0].includes('autoplay'), 'Video must load and play on request.');
-  assert(html.includes('3 500 уровней') || html.includes('3,500 levels'), 'Updated level count is required.');
-  assert(html.includes('7 фигур') || html.includes('7 shapes'), 'Updated shape count is required.');
-  for (const caption of lang === 'ru' ? ['Пробой','Импульс','Стазис','300 разных'] : ['Pierce','Pulse','Stasis','300 different']) assert(html.includes(caption), `Missing update feature: ${caption}`);
+  assert(html.includes(`<source src="/${media.file}" type="video/mp4">`), 'The page must play the verified trailer.');
+  assert(html.includes(`${media.durationSeconds} ${lang === 'ru' ? 'секунд' : 'seconds'}`), 'Trailer duration must match the manifest.');
+  const updateCopy = lang === 'ru'
+    ? ['4 000 уровней', '8 фигур', '24 испытания', 'Сердце', 'разветвители ×4', 'Пробой', 'Импульс', 'Стазис']
+    : ['4,000 levels', '8 shapes', '24 challenges', 'The heart', '×4 splitters', 'Pierce', 'Pulse', 'Stasis'];
+  for (const caption of updateCopy) assert(html.includes(caption), `Missing update feature: ${caption}`);
   assert(!/<script\b[^>]*>\s*[^<\s]/.test(html), 'Inline scripts are forbidden.');
   assert(!/\son[a-z]+\s*=/.test(html), 'Inline handlers are forbidden.');
   assert(!/<(?:iframe|form)\b/i.test(html), 'No embedded apps or forms.');

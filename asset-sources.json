@@ -182,5 +182,45 @@
       1080,
       1920
     ]
+  },
+  {
+    "name": "cube-ru-new-shapes",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Heart/RU/08-new-shapes.jpg",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-ru-challenges-24",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Heart/RU/09-challenges.jpg",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-en-new-shapes",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Heart/EN/08-new-shapes.jpg",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-en-challenges-24",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Heart/EN/09-challenges.jpg",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cube-heart-trailer-poster",
+    "source": "ArrowsCube/StoreAssets/RuStore_2026-11_Heart/poster-ru.jpg",
+    "originalSize": [
+      1080,
+      1920
+    ]
   }
 ]
