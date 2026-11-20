@@ -4,9 +4,11 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const origin = 'https://doktortapok.github.io';
-for (const [url, file, type] of [['/','index.html','text/html'],['/en/','en/index.html','text/html'],['/assets/site.css','assets/site.css','text/css'],['/assets/site.js','assets/site.js','application/javascript'],['/app-ads.txt','app-ads.txt','text/plain']]) {
-  const response = await fetch(origin + url, {headers:{'Cache-Control':'no-cache'}, signal:AbortSignal.timeout(30000)});
+const publicOrigin = 'https://doktortapok.github.io';
+const origin = new URL(process.argv[2] || publicOrigin).origin;
+const publicCheck = origin === publicOrigin;
+for (const [url, file, type] of [['/','index.html','text/html'],['/en/','en/index.html','text/html'],['/assets/site.css','assets/site.css','text/css'],['/assets/site.js','assets/site.js','application/javascript'],['/app-ads.txt','app-ads.txt','text/plain'],['/robots.txt','robots.txt','text/plain'],['/sitemap.xml','sitemap.xml','xml']]) {
+  const response = await fetch(origin + url, {headers:{'Cache-Control':'no-cache'}, redirect:'manual', signal:AbortSignal.timeout(30000)});
   assert.equal(response.status, 200, `${url} must be publicly available.`);
   assert(!response.redirected, `${url} must not redirect to login or a challenge.`);
   const mime = response.headers.get('content-type') || '';
@@ -21,10 +23,12 @@ for (const url of ['/README.md','/tools/build.mjs']) {
   assert.equal(response.status,404,`Source file ${url} must not be deployed.`);
   console.log(`PASS ${url}: not deployed (HTTP 404).`);
 }
-const http = await fetch('http://doktortapok.github.io/app-ads.txt',{redirect:'manual',signal:AbortSignal.timeout(30000)});
-assert([301,302,307,308].includes(http.status));
-assert.equal(http.headers.get('location'),'https://doktortapok.github.io/app-ads.txt');
-console.log('PASS HTTP redirects to HTTPS.');
+if (publicCheck) {
+  const http = await fetch(origin.replace('https:', 'http:') + '/app-ads.txt',{redirect:'manual',signal:AbortSignal.timeout(30000)});
+  assert([301,302,307,308].includes(http.status));
+  assert.equal(http.headers.get('location'),origin + '/app-ads.txt');
+  console.log('PASS HTTP redirects to HTTPS.');
+}
 const media = JSON.parse(await readFile(path.join(root, 'media-sources.json'), 'utf8'))[0];
 const trailer = await fetch(origin + '/' + media.file, {signal:AbortSignal.timeout(60000)});
 assert.equal(trailer.status, 200);

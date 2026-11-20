@@ -6,25 +6,34 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
+const origin = 'https://doktortapok.github.io';
+const companion = 'https://doktor-tapok-games.doktortapok94.chatgpt.site';
 
 const bytes = await readFile(path.join(dist, 'app-ads.txt'));
 const hash = createHash('sha256').update(bytes).digest('hex');
+const expectedHash = (await readFile(path.join(root, 'app-ads.sha256'), 'utf8')).trim();
+assert.equal(hash, expectedHash, 'app-ads.txt differs from the approved file.');
 
 const adsText = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 
 assert(!adsText.includes('<'), 'app-ads.txt must be plain text.');
 
-const records = adsText.split(/\r?\n/).filter(line => line.trim() && !line.startsWith('#'));
+const records = adsText.split(/\r?\n/).filter(line => line.trim() && !line.trimStart().startsWith('#'));
 
 assert(records.length > 0, 'app-ads.txt is empty.');
 
+const sellerDomainsWithNonstandardSyntax = [];
 for (const line of records) {
   assert(
-    /^[^,\r\n]+,\s*[^,\s]+,\s*(DIRECT|RESELLER)(?:\s*,\s*[^,\s]+)?\s*$/i.test(line),
+    /^[^,\s]+\s*,\s*[^,\s]+,\s*(DIRECT|RESELLER)(?:\s*,\s*[^,\s]+)?\s*$/i.test(line),
     `Invalid seller record: ${line}`
   );
+  const domain = line.split(',', 1)[0].trim();
+  if (!/^[a-z0-9.-]+$/i.test(domain)) sellerDomainsWithNonstandardSyntax.push(domain);
 }
-
+if (sellerDomainsWithNonstandardSyntax.length) {
+  console.warn(`Nonstandard seller domains in the approved app-ads.txt: ${sellerDomainsWithNonstandardSyntax.join(', ')}.`);
+}
 
 const sourceArg = process.argv.find(arg => arg.startsWith('--original='));
 if (sourceArg) assert(bytes.equals(await readFile(sourceArg.slice('--original='.length))), 'File differs from the owner-provided original.');
@@ -38,12 +47,25 @@ assert.equal(videoBytes.subarray(4, 8).toString(), 'ftyp', 'Trailer must be an M
 for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   const html = await readFile(path.join(dist, file), 'utf8');
   assert(html.includes(`<html lang="${lang}">`));
-  assert.equal((html.match(/class="game game--/g) || []).length, 3, 'Exactly three game sections required.');
-  assert.equal((html.match(/class="screenshot-link"/g) || []).length, 12, 'Four screenshot links per game required.');
-  assert.equal((html.match(/https:\/\/www\.rustore\.ru\/catalog\/app\//g) || []).length, 3);
-  assert.equal((html.match(/https:\/\/appgallery\.huawei\.com\/app\//g) || []).length, 3);
+  const gameIds = [...html.matchAll(/<section class="game game--[^"]+" id="([^"]+)"/g)].map(match => match[1]);
+  assert.deepEqual(gameIds, ['arrows-cube'], 'Unexpected game sections.');
+  assert.equal((html.match(/class="screenshot-link"/g) || []).length, gameIds.length * 4, 'Four screenshot links per game required.');
+  assert.equal((html.match(/https:\/\/www\.rustore\.ru\/catalog\/app\//g) || []).length, gameIds.length);
+  assert.equal((html.match(/https:\/\/appgallery\.huawei\.com\/app\//g) || []).length, gameIds.length);
   assert(html.includes('href="/app-ads.txt"'));
   assert(html.includes('Content-Security-Policy'));
+  const pagePath = lang === 'ru' ? '/' : '/en/';
+  assert(html.includes('<link rel="canonical" href="' + origin + pagePath + '">'));
+  assert(html.includes('href="' + companion + pagePath + '">'), 'Missing companion site link.');
+  const shareImage = html.match(/property="og:image" content="([^"]+)"/)[1];
+  assert.equal(new URL(shareImage).origin, origin);
+  assert((await stat(path.join(dist, new URL(shareImage).pathname))).isFile());
+  for (const match of html.matchAll(/\bsrcset="([^"]+)"/g)) {
+    for (const entry of match[1].split(',')) {
+      const [url] = entry.trim().split(/\s+/);
+      assert(url.startsWith('/assets/') && (await stat(path.join(dist, url))).isFile());
+    }
+  }
   assert(html.includes("media-src 'self'"), 'Local video must be permitted by CSP.');
   const videos = [...html.matchAll(/<video\b[^>]*>/g)];
   assert.equal(videos.length, 1, 'Exactly one Arrows Cube trailer is expected.');
@@ -75,6 +97,10 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   const scripts = [...html.matchAll(/<script\b[^>]*src="([^"]+)"/g)];
   assert(scripts.every(match => match[1].startsWith('/assets/')), 'No external JavaScript.');
 }
-for (const file of ['robots.txt','sitemap.xml','404.html','.nojekyll']) await stat(path.join(dist, file));
-console.log(`PASS: RU/EN, 3 games, 24 screenshot links, 6 store links per language, local assets and plain-text app-ads.txt (${records.length} seller records).`);
+const robots = await readFile(path.join(dist, 'robots.txt'), 'utf8');
+assert.equal(robots, 'User-agent: *\nAllow: /\nSitemap: ' + origin + '/sitemap.xml\n');
+const sitemap = await readFile(path.join(dist, 'sitemap.xml'), 'utf8');
+assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]), [origin + '/', origin + '/en/']);
+for (const file of ['404.html', '.nojekyll']) assert((await stat(path.join(dist, file))).isFile());
+console.log(`PASS: RU/EN, Arrows Cube and its trailer, local assets and plain-text app-ads.txt (${records.length} seller records).`);
 console.log(`app-ads.txt SHA-256: ${hash}`);

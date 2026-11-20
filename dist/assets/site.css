@@ -21,3 +21,6 @@
 @media(max-width:800px){.game-trailer{margin-inline:32px;gap:30px;grid-template-columns:minmax(0,1fr) 210px}.trailer-copy>p:not(.eyebrow){font-size:12px}.trailer-chapters li{font-size:11px}}
 @media(max-width:520px){.game-update{padding:15px;margin-top:20px}.game .game-update h3{font-size:14px}.game-update>p:last-child{font-size:11px}.reactor-note .reactor-abilities strong,.reactor-abilities span{font-size:10px}.reactor-abilities li{grid-template-columns:55px 1fr;gap:8px}.game-trailer{margin-inline:23px;padding-top:27px;grid-template-columns:minmax(0,1fr);gap:25px}.game .trailer-copy h3{font-size:26px}.trailer-chapters{gap:10px;margin-top:20px}.trailer-copy>.trailer-meta{font-size:9px!important;margin-top:20px}.game-trailer video{max-width:280px;justify-self:center;border-radius:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.gallery-track{scroll-behavior:auto}}
+
+.hero-art--single .hero-phone{width:clamp(120px,45vw,225px)}
+@media (max-width:600px){.hero-art--single .hero-phone{width:clamp(120px,46vw,175px)}}
