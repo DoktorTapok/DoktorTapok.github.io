@@ -7,7 +7,6 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const origin = 'https://doktortapok.github.io';
-const companion = 'https://doktor-tapok-games.doktortapok94.chatgpt.site';
 
 const bytes = await readFile(path.join(dist, 'app-ads.txt'));
 const hash = createHash('sha256').update(bytes).digest('hex');
@@ -48,7 +47,7 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   const html = await readFile(path.join(dist, file), 'utf8');
   assert(html.includes(`<html lang="${lang}">`));
   const gameIds = [...html.matchAll(/<section class="game game--[^"]+" id="([^"]+)"/g)].map(match => match[1]);
-  assert.deepEqual(gameIds, ['arrows-cube'], 'Unexpected game sections.');
+  assert.deepEqual(gameIds, ['hanoi-tower', 'arrows-cube', 'arrows-cascade'], 'Unexpected game sections.');
   assert.equal((html.match(/class="screenshot-link"/g) || []).length, gameIds.length * 4, 'Four screenshot links per game required.');
   assert.equal((html.match(/https:\/\/www\.rustore\.ru\/catalog\/app\//g) || []).length, gameIds.length);
   assert.equal((html.match(/https:\/\/appgallery\.huawei\.com\/app\//g) || []).length, gameIds.length);
@@ -56,7 +55,7 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
   assert(html.includes('Content-Security-Policy'));
   const pagePath = lang === 'ru' ? '/' : '/en/';
   assert(html.includes('<link rel="canonical" href="' + origin + pagePath + '">'));
-  assert(html.includes('href="' + companion + pagePath + '">'), 'Missing companion site link.');
+  assert(!html.includes('chatgpt.site'), 'The unified site must not link to the retired site.');
   const shareImage = html.match(/property="og:image" content="([^"]+)"/)[1];
   assert.equal(new URL(shareImage).origin, origin);
   assert((await stat(path.join(dist, new URL(shareImage).pathname))).isFile());
@@ -77,6 +76,8 @@ for (const [file, lang] of [['index.html','ru'],['en/index.html','en']]) {
     ? ['4 000 уровней', '8 фигур', '24 испытания', 'Сердце', 'разветвители ×4', 'Пробой', 'Импульс', 'Стазис']
     : ['4,000 levels', '8 shapes', '24 challenges', 'The heart', '×4 splitters', 'Pierce', 'Pulse', 'Stasis'];
   for (const caption of updateCopy) assert(html.includes(caption), `Missing update feature: ${caption}`);
+  for (let i = 1; i <= 4; i++) assert(html.includes(`cascade-${lang}-${i}-202611`), 'Updated localized Cascade screenshots required.');
+  assert(html.includes(lang === 'ru' ? '5 000 уровней' : '5,000 levels'));
   assert(!/<script\b[^>]*>\s*[^<\s]/.test(html), 'Inline scripts are forbidden.');
   assert(!/\son[a-z]+\s*=/.test(html), 'Inline handlers are forbidden.');
   assert(!/<(?:iframe|form)\b/i.test(html), 'No embedded apps or forms.');
@@ -102,5 +103,5 @@ assert.equal(robots, 'User-agent: *\nAllow: /\nSitemap: ' + origin + '/sitemap.x
 const sitemap = await readFile(path.join(dist, 'sitemap.xml'), 'utf8');
 assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]), [origin + '/', origin + '/en/']);
 for (const file of ['404.html', '.nojekyll']) assert((await stat(path.join(dist, file))).isFile());
-console.log(`PASS: RU/EN, Arrows Cube and its trailer, local assets and plain-text app-ads.txt (${records.length} seller records).`);
+console.log(`PASS: RU/EN, all three games and the Arrows Cube trailer, local assets and plain-text app-ads.txt (${records.length} seller records).`);
 console.log(`app-ads.txt SHA-256: ${hash}`);

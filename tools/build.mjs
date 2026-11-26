@@ -12,68 +12,366 @@ const download = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path 
 const esc = value => String(value).replace(/[&<>"']/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
 
 const copy = {
-  ru: {
-    title: 'Arrows Cube — объёмная головоломка для Android',
-    description: 'Вращайте объёмные фигуры и освобождайте стрелки в Arrows Cube. Скриншоты, геймплей и ссылки на RuStore и AppGallery.',
-    skip: 'К содержимому', games: 'Об игре', about: 'О студии', contact: 'Связаться',
-    eyebrow: 'НЕЗАВИСИМАЯ ИГРОВАЯ СТУДИЯ', hero: 'Arrows <span>Cube</span>',
-    intro: 'Вращайте объёмные фигуры и ищите свободный путь для каждой стрелки.',
-    cta: 'Об игре', platform: 'Для Android',
-    how: 'Как играть',
-    screenshots: 'Скриншоты игры', enlarge: 'Увеличить', previous: 'Предыдущий скриншот', next: 'Следующий скриншот',
-    galleryHint: 'Листайте и нажимайте, чтобы рассмотреть', close: 'Закрыть изображение',
-    studioLabel: 'О СТУДИИ', studioTitle: 'Простая идея.<br>Интересная задача.',
-    studioText: 'Doktor Tapok Games — независимая студия игр для Android. Здесь любят понятные правила, приятные детали и то самое чувство, когда решение наконец нашлось.',
-    contactLabel: 'Есть вопрос или идея?', contactTitle: 'Давайте на связи.',
-    footer: 'Небольшие игры для любопытного ума.', top: 'Наверх',
-    gamesData: [
+  "ru": {
+    "title": "Doktor Tapok Games — головоломки для Android",
+    "description": "Ханойские башни, Arrows Cube и Arrows Cascade — три головоломки для Android. Скриншоты, геймплей и ссылки на RuStore и Huawei AppGallery.",
+    "skip": "К содержимому",
+    "games": "Игры",
+    "about": "О студии",
+    "contact": "Связаться",
+    "eyebrow": "НЕЗАВИСИМАЯ ИГРОВАЯ СТУДИЯ",
+    "hero": "Есть минутка?<br>Есть <span>головоломка.</span>",
+    "intro": "Собирайте цветные башни, вращайте объёмные фигуры и освобождайте поле стрелка за стрелкой.",
+    "cta": "Найти свою игру",
+    "platform": "Для Android",
+    "deck": "Три игры. Твой ход.",
+    "small": "Поиграем?",
+    "collection": "Разные игры.<br>Общее — удовольствие от решения.",
+    "collectionText": "Выберите, что хочется разгадать сегодня.",
+    "how": "Как играть",
+    "screenshots": "Скриншоты игры",
+    "enlarge": "Увеличить",
+    "previous": "Предыдущий скриншот",
+    "next": "Следующий скриншот",
+    "galleryHint": "Листайте и нажимайте, чтобы рассмотреть",
+    "close": "Закрыть изображение",
+    "studioLabel": "О СТУДИИ",
+    "studioTitle": "Простая идея.<br>Интересная задача.",
+    "studioText": "Doktor Tapok Games — независимая студия игр для Android. Здесь любят понятные правила, приятные детали и то самое чувство, когда решение наконец нашлось.",
+    "contactLabel": "Есть вопрос или идея?",
+    "contactTitle": "Давайте на связи.",
+    "footer": "Небольшие игры для любопытного ума.",
+    "top": "Наверх",
+    "gamesData": [
       {
-        id: 'arrows-cube', theme: 'cube', tag: 'ОБЪЁМ · СТРЕЛКИ · ПЕРСПЕКТИВА', title: 'Arrows<br>Cube', english: 'Arrows Cube',
-        short: 'Посмотрите на задачу с другой стороны.',
-        text: 'Вращайте объёмные фигуры, ищите свободные пути и убирайте стрелки в правильном порядке. В классике можно играть в своём темпе. В «Реакторе» энергия убывает, а удачные ходы пополняют её.',
-        stats: ['4 000 уровней', '8 фигур', '24 испытания'],
-        highlight: ['ПРЕДПРОСМОТР ОБНОВЛЕНИЯ', 'Сердце и 12 новых испытаний', 'В кампании сердца 500 уровней с цветными ключами и замками. В испытаниях ищите выходы, выпускайте движущиеся стрелки и запускайте разветвители ×4, чтобы расчистить поле. «Путь мастера» вырос до 60 ступеней.'],
-        rules: ['Вращайте и приближайте фигуру, чтобы рассмотреть пути стрелок.', 'Нажимайте на стрелку, перед которой свободен путь. Заблокированная стрелка отнимает жизнь.', 'Уберите все стрелки. Подсказка и стирание помогут в сложной ситуации.'],
-        note: ['РЕАКТОР: ЦЕПНЫЕ РЕАКЦИИ', 'Обычные ходы накапливают общий заряд. Выбирайте способность, поддерживайте энергию и собирайте серии до AAA: каждое удаление способностью тоже повышает комбо и множитель.'],
-        abilities: [['Пробой', 'Пробивная стрелка расчищает препятствия на своём пути.'], ['Импульс', 'Убирает стрелки, пересекающие выбранный участок 3×3.'], ['Стазис', 'На время останавливает расход энергии.']],
-        images: ['cube-ru-new-shapes','cube-ru-challenges-24','cube-classic','cube-ru-reactor-202611'],
-        captions: ['Череп с зеркальными кромками и рубиновое сердце', '24 испытания с выходами, разветвителями и бомбами', 'Вращайте фигуру и ищите свободный путь', 'Пробой, импульс и стазис'],
-        trailer: {title: 'Геймплей обновления', text: 'Восемь фигур в разных скинах, цепная реакция в «Ледяной цепи» и три способности «Реактора».', label: 'Геймплей Arrows Cube — 38 секунд', meta: '38 секунд · Русские титры', chapters: [['00:00', 'Восемь фигур, включая череп и сердце'], ['00:14', 'Единственный выход, Змейка и Ледяная цепь'], ['00:24', 'Реактор: пробой, импульс и стазис']], fallback: 'Открыть видео', poster: 'cube-heart-trailer-poster'},
-        rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
+        "id": "hanoi-tower",
+        "theme": "hanoi",
+        "number": "01",
+        "tag": "ЦВЕТА · КОЛЬЦА · ЛОГИКА",
+        "title": "Ханойские<br>башни",
+        "english": "Hanoi Tower",
+        "short": "Каждому цвету — свою башню.",
+        "text": "Уютная объёмная головоломка о цветах и размерах. Собирайте башни, раскрывайте скрытые кольца и находите решение за меньшее число ходов.",
+        "stats": [
+          "200 уровней",
+          "Скрытые кольца",
+          "Свой стиль"
+        ],
+        "rules": [
+          "Коснитесь штыря, затем другого, чтобы переместить верхнее кольцо.",
+          "На непустой штырь кладите только меньшее кольцо того же цвета.",
+          "Соберите каждый цвет в отдельную башню: большие кольца внизу, маленькие наверху."
+        ],
+        "images": [
+          "hanoi-ru-1",
+          "hanoi-ru-2",
+          "hanoi-ru-3",
+          "hanoi-ru-4"
+        ],
+        "captions": [
+          "Соберите каждый цвет",
+          "Раскройте скрытые кольца",
+          "Выберите свой стиль",
+          "Найдите путь к победе"
+        ],
+        "rustore": "com.DoktorTapokGames.HanoiTower",
+        "huawei": "C118121171"
       },
-    ],
-  },
-  en: {
-    title: 'Arrows Cube — 3D puzzle game for Android',
-    description: 'Rotate 3D shapes and clear arrows in Arrows Cube. See screenshots, gameplay and links to RuStore and AppGallery.',
-    skip: 'Skip to content', games: 'The game', about: 'The studio', contact: 'Get in touch',
-    eyebrow: 'INDEPENDENT GAME STUDIO', hero: 'Arrows <span>Cube</span>',
-    intro: 'Rotate 3D shapes and find a clear path for every arrow.',
-    cta: 'Explore the game', platform: 'For Android',
-    how: 'How to play',
-    screenshots: 'Game screenshots', enlarge: 'Enlarge', previous: 'Previous screenshot', next: 'Next screenshot',
-    galleryHint: 'Swipe and tap to take a closer look', close: 'Close image',
-    studioLabel: 'THE STUDIO', studioTitle: 'A simple idea.<br>A satisfying challenge.',
-    studioText: 'Doktor Tapok Games is an independent Android game studio. We love clear rules, thoughtful little details and that lovely moment when a solution finally clicks.',
-    contactLabel: 'A question or an idea?', contactTitle: 'Let’s keep in touch.',
-    footer: 'Little games for curious minds.', top: 'Back to top',
-    gamesData: [
       {
-        id: 'arrows-cube', theme: 'cube', tag: 'SHAPES · ARROWS · PERSPECTIVE', title: 'Arrows<br>Cube', english: 'Arrows Cube',
-        short: 'A fresh perspective changes everything.',
-        text: 'Rotate 3D shapes, find clear paths and remove arrows in the right order. Play Classic at your own pace or keep your energy up with every move in Reactor.',
-        stats: ['4,000 levels', '8 shapes', '24 challenges'],
-        highlight: ['UPDATE PREVIEW', 'The heart and 12 new challenges', 'The heart campaign brings 500 levels with colored keys and locks. In challenges, find exits, release moving arrows and trigger ×4 splitters to clear the board. The Master’s Path now has 60 tiers.'],
-        rules: ['Rotate and zoom in to see where the arrows lead.', 'Tap an arrow with a clear path. A blocked arrow costs a life.', 'Remove every arrow. A hint or an eraser can help when you get stuck.'],
-        note: ['REACTOR: CHAIN REACTIONS', 'Ordinary moves build shared charge. Choose an ability, keep your energy up and climb to AAA: every arrow removed by an ability also extends your chain and raises the multiplier.'],
-        abilities: [['Pierce', 'Send an arrow through the blockers along its path.'], ['Pulse', 'Clear arrows touching a selected 3×3 area.'], ['Stasis', 'Pause energy drain for a short breather.']],
-        images: ['cube-en-new-shapes','cube-en-challenges-24','cube-classic','cube-en-reactor-202611'],
-        captions: ['The mirror-rimmed skull and Ruby heart', '24 challenges with exits, splitters and bombs', 'Rotate the shape and find a clear path', 'Pierce, Pulse and Stasis'],
-        trailer: {title: 'Gameplay from the update', text: 'Eight shapes in different skins, a chain reaction in Ice Chain and three Reactor abilities.', label: 'Arrows Cube gameplay — 38 seconds, Russian on-screen text', meta: '38 seconds · Russian on-screen text', chapters: [['00:00', 'Eight shapes, including the skull and heart'], ['00:14', 'Only Exit, Snake and Ice Chain'], ['00:24', 'Reactor: Pierce, Pulse and Stasis']], fallback: 'Open video', poster: 'cube-heart-trailer-poster'},
-        rustore: 'com.DoktorTapokGames.ArrowsCube.hw', huawei: 'C118768849',
+        "id": "arrows-cube",
+        "theme": "cube",
+        "tag": "ОБЪЁМ · СТРЕЛКИ · ПЕРСПЕКТИВА",
+        "title": "Arrows<br>Cube",
+        "english": "Arrows Cube",
+        "short": "Посмотрите на задачу с другой стороны.",
+        "text": "Вращайте объёмные фигуры, ищите свободные пути и убирайте стрелки в правильном порядке. В классике можно играть в своём темпе. В «Реакторе» энергия убывает, а удачные ходы пополняют её.",
+        "stats": [
+          "4 000 уровней",
+          "8 фигур",
+          "24 испытания"
+        ],
+        "highlight": [
+          "ПРЕДПРОСМОТР ОБНОВЛЕНИЯ",
+          "Сердце и 12 новых испытаний",
+          "В кампании сердца 500 уровней с цветными ключами и замками. В испытаниях ищите выходы, выпускайте движущиеся стрелки и запускайте разветвители ×4, чтобы расчистить поле. «Путь мастера» вырос до 60 ступеней."
+        ],
+        "rules": [
+          "Вращайте и приближайте фигуру, чтобы рассмотреть пути стрелок.",
+          "Нажимайте на стрелку, перед которой свободен путь. Заблокированная стрелка отнимает жизнь.",
+          "Уберите все стрелки. Подсказка и стирание помогут в сложной ситуации."
+        ],
+        "note": [
+          "РЕАКТОР: ЦЕПНЫЕ РЕАКЦИИ",
+          "Обычные ходы накапливают общий заряд. Выбирайте способность, поддерживайте энергию и собирайте серии до AAA: каждое удаление способностью тоже повышает комбо и множитель."
+        ],
+        "abilities": [
+          [
+            "Пробой",
+            "Пробивная стрелка расчищает препятствия на своём пути."
+          ],
+          [
+            "Импульс",
+            "Убирает стрелки, пересекающие выбранный участок 3×3."
+          ],
+          [
+            "Стазис",
+            "На время останавливает расход энергии."
+          ]
+        ],
+        "images": [
+          "cube-ru-new-shapes",
+          "cube-ru-challenges-24",
+          "cube-classic",
+          "cube-ru-reactor-202611"
+        ],
+        "captions": [
+          "Череп с зеркальными кромками и рубиновое сердце",
+          "24 испытания с выходами, разветвителями и бомбами",
+          "Вращайте фигуру и ищите свободный путь",
+          "Пробой, импульс и стазис"
+        ],
+        "trailer": {
+          "title": "Геймплей обновления",
+          "text": "Восемь фигур в разных скинах, цепная реакция в «Ледяной цепи» и три способности «Реактора».",
+          "label": "Геймплей Arrows Cube — 38 секунд",
+          "meta": "38 секунд · Русские титры",
+          "chapters": [
+            [
+              "00:00",
+              "Восемь фигур, включая череп и сердце"
+            ],
+            [
+              "00:14",
+              "Единственный выход, Змейка и Ледяная цепь"
+            ],
+            [
+              "00:24",
+              "Реактор: пробой, импульс и стазис"
+            ]
+          ],
+          "fallback": "Открыть видео",
+          "poster": "cube-heart-trailer-poster"
+        },
+        "rustore": "com.DoktorTapokGames.ArrowsCube.hw",
+        "huawei": "C118768849",
+        "number": "02"
       },
-    ],
+      {
+        "id": "arrows-cascade",
+        "theme": "cascade",
+        "number": "03",
+        "tag": "СТРЕЛКИ · ФИГУРЫ · СПОКОЙСТВИЕ",
+        "title": "Arrows<br>Cascade",
+        "english": "Arrows Cascade",
+        "short": "Большая задача начинается с одной стрелки.",
+        "text": "Светлый минималистичный интерфейс, 5 000 уровней и 60 форм — от звёзд до животных. Находите свободные стрелки, открывайте замки ключами и прокладывайте пути через лёд и порталы. Проходите кампанию, получайте XP и открывайте новые скины.",
+        "stats": [
+          "5 000 уровней",
+          "60 форм",
+          "Скины и рейтинг"
+        ],
+        "rules": [
+          "Найдите стрелку со свободным путём в направлении наконечника.",
+          "Убирайте стрелки по порядку. Учитывайте ключи, замки, лёд, порталы и зеркала.",
+          "Очистите поле. Приближайте сложные участки, включайте линии направлений и пользуйтесь подсказкой или ластиком."
+        ],
+        "images": [
+          "cascade-ru-1-202611",
+          "cascade-ru-2-202611",
+          "cascade-ru-3-202611",
+          "cascade-ru-4-202611"
+        ],
+        "captions": [
+          "Освободи путь — один ход открывает следующий",
+          "5 000 уровней и 60 форм",
+          "Ключи, лёд и порталы меняют правила",
+          "Проходи уровни и открывай новые скины"
+        ],
+        "rustore": "com.DoktorTapokGames.ArrowsCascade",
+        "huawei": "C118009291"
+      }
+    ]
   },
+  "en": {
+    "title": "Doktor Tapok Games — Android puzzle games",
+    "description": "Hanoi Tower, Arrows Cube and Arrows Cascade — three Android puzzle games. Screenshots, gameplay and links to RuStore and Huawei AppGallery.",
+    "skip": "Skip to content",
+    "games": "Games",
+    "about": "The studio",
+    "contact": "Get in touch",
+    "eyebrow": "INDEPENDENT GAME STUDIO",
+    "hero": "Got a minute?<br>Meet your next <span>puzzle.</span>",
+    "intro": "Build colorful towers, rotate 3D shapes and clear the board one arrow at a time.",
+    "cta": "Find your game",
+    "platform": "For Android",
+    "deck": "Three games. Your move.",
+    "small": "Shall we play?",
+    "collection": "Different puzzles.<br>The same joy of figuring it out.",
+    "collectionText": "Pick something to untangle today.",
+    "how": "How to play",
+    "screenshots": "Game screenshots",
+    "enlarge": "Enlarge",
+    "previous": "Previous screenshot",
+    "next": "Next screenshot",
+    "galleryHint": "Swipe and tap to take a closer look",
+    "close": "Close image",
+    "studioLabel": "THE STUDIO",
+    "studioTitle": "A simple idea.<br>A satisfying challenge.",
+    "studioText": "Doktor Tapok Games is an independent Android game studio. We love clear rules, thoughtful little details and that lovely moment when a solution finally clicks.",
+    "contactLabel": "A question or an idea?",
+    "contactTitle": "Let’s keep in touch.",
+    "footer": "Little games for curious minds.",
+    "top": "Back to top",
+    "gamesData": [
+      {
+        "id": "hanoi-tower",
+        "theme": "hanoi",
+        "number": "01",
+        "tag": "COLORS · RINGS · LOGIC",
+        "title": "Hanoi<br>Tower",
+        "english": "Hanoi Tower",
+        "short": "A little tower for every color.",
+        "text": "A cozy 3D puzzle about colors, sizes and clever moves. Build towers, uncover hidden rings and find a solution in fewer moves.",
+        "stats": [
+          "200 levels",
+          "Hidden rings",
+          "Your own style"
+        ],
+        "rules": [
+          "Tap one peg, then another to move its top ring.",
+          "On an occupied peg, place only a smaller ring of the same color.",
+          "Bring each color together on one peg, with larger rings below smaller ones."
+        ],
+        "images": [
+          "hanoi-en-1",
+          "hanoi-en-2",
+          "hanoi-en-3",
+          "hanoi-en-4"
+        ],
+        "captions": [
+          "Bring every color together",
+          "Uncover the hidden rings",
+          "Find your own style",
+          "Make your way to victory"
+        ],
+        "rustore": "com.DoktorTapokGames.HanoiTower",
+        "huawei": "C118121171"
+      },
+      {
+        "id": "arrows-cube",
+        "theme": "cube",
+        "tag": "SHAPES · ARROWS · PERSPECTIVE",
+        "title": "Arrows<br>Cube",
+        "english": "Arrows Cube",
+        "short": "A fresh perspective changes everything.",
+        "text": "Rotate 3D shapes, find clear paths and remove arrows in the right order. Play Classic at your own pace or keep your energy up with every move in Reactor.",
+        "stats": [
+          "4,000 levels",
+          "8 shapes",
+          "24 challenges"
+        ],
+        "highlight": [
+          "UPDATE PREVIEW",
+          "The heart and 12 new challenges",
+          "The heart campaign brings 500 levels with colored keys and locks. In challenges, find exits, release moving arrows and trigger ×4 splitters to clear the board. The Master’s Path now has 60 tiers."
+        ],
+        "rules": [
+          "Rotate and zoom in to see where the arrows lead.",
+          "Tap an arrow with a clear path. A blocked arrow costs a life.",
+          "Remove every arrow. A hint or an eraser can help when you get stuck."
+        ],
+        "note": [
+          "REACTOR: CHAIN REACTIONS",
+          "Ordinary moves build shared charge. Choose an ability, keep your energy up and climb to AAA: every arrow removed by an ability also extends your chain and raises the multiplier."
+        ],
+        "abilities": [
+          [
+            "Pierce",
+            "Send an arrow through the blockers along its path."
+          ],
+          [
+            "Pulse",
+            "Clear arrows touching a selected 3×3 area."
+          ],
+          [
+            "Stasis",
+            "Pause energy drain for a short breather."
+          ]
+        ],
+        "images": [
+          "cube-en-new-shapes",
+          "cube-en-challenges-24",
+          "cube-classic",
+          "cube-en-reactor-202611"
+        ],
+        "captions": [
+          "The mirror-rimmed skull and Ruby heart",
+          "24 challenges with exits, splitters and bombs",
+          "Rotate the shape and find a clear path",
+          "Pierce, Pulse and Stasis"
+        ],
+        "trailer": {
+          "title": "Gameplay from the update",
+          "text": "Eight shapes in different skins, a chain reaction in Ice Chain and three Reactor abilities.",
+          "label": "Arrows Cube gameplay — 38 seconds, Russian on-screen text",
+          "meta": "38 seconds · Russian on-screen text",
+          "chapters": [
+            [
+              "00:00",
+              "Eight shapes, including the skull and heart"
+            ],
+            [
+              "00:14",
+              "Only Exit, Snake and Ice Chain"
+            ],
+            [
+              "00:24",
+              "Reactor: Pierce, Pulse and Stasis"
+            ]
+          ],
+          "fallback": "Open video",
+          "poster": "cube-heart-trailer-poster"
+        },
+        "rustore": "com.DoktorTapokGames.ArrowsCube.hw",
+        "huawei": "C118768849",
+        "number": "02"
+      },
+      {
+        "id": "arrows-cascade",
+        "theme": "cascade",
+        "number": "03",
+        "tag": "ARROWS · PATTERNS · CALM",
+        "title": "Arrows<br>Cascade",
+        "english": "Arrows Cascade",
+        "short": "Every big puzzle starts with one arrow.",
+        "text": "A bright, minimalist interface, 5,000 levels and 60 shapes, from stars to animals. Find free arrows, collect keys to open locks and route your way through ice and portals. Earn XP, unlock arrow styles and climb the leaderboard.",
+        "stats": [
+          "5,000 levels",
+          "60 shapes",
+          "Skins & leaderboard"
+        ],
+        "rules": [
+          "Find an arrow with a clear path in the direction it points.",
+          "Remove arrows in the right order. Plan around keys, locks, ice, portals and mirrors.",
+          "Clear the board. Zoom in, turn on direction guides and use a hint or the eraser when you need help."
+        ],
+        "images": [
+          "cascade-en-1-202611",
+          "cascade-en-2-202611",
+          "cascade-en-3-202611",
+          "cascade-en-4-202611"
+        ],
+        "captions": [
+          "Clear the way — one smart move unlocks the next",
+          "5,000 levels and 60 shapes",
+          "Keys, ice and portals change the rules",
+          "Beat levels and unlock new arrow styles"
+        ],
+        "rustore": "com.DoktorTapokGames.ArrowsCascade",
+        "huawei": "C118009291"
+      }
+    ]
+  }
 };
 
 function picture(name, alt, eager = false, sizes = '(max-width: 600px) 72vw, 260px') {
@@ -82,7 +380,7 @@ function picture(name, alt, eager = false, sizes = '(max-width: 600px) 72vw, 260
 function renderGame(g, t) {
   return `<section class="game game--${g.theme}" id="${g.id}" aria-labelledby="${g.id}-title">
     <div class="game-copy">
-      <p class="game-tag">${g.tag}</p>
+      <p class="game-tag"><span>${g.number}</span> ${g.tag}</p>
       <h2 id="${g.id}-title">${g.title.replaceAll('<br>', '<br> ')}</h2>
       <p class="game-short">${g.short}</p><p class="game-description">${g.text}</p>
       <ul class="game-stats" aria-label="${g.english}">${g.stats.map(s => `<li>${s}</li>`).join('')}</ul>
@@ -122,20 +420,22 @@ for (const lang of ['ru', 'en']) {
   <a href="#main" class="skip-link">${t.skip}</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="${lang === 'ru' ? '/' : '/en/'}" aria-label="Doktor Tapok Games"><span class="brand-symbol" aria-hidden="true">dt<span>↗</span></span><span>Doktor Tapok<span class="brand-sub">GAMES</span></span></a>
-    <nav class="main-nav" aria-label="${t.games}"><a href="#arrows-cube">${t.games}</a><a href="#studio">${t.about}</a><a href="#contact">${t.contact} ${arrow}</a></nav>
+    <nav class="main-nav" aria-label="${t.games}"><a href="#games">${t.games}</a><a href="#studio">${t.about}</a><a href="#contact">${t.contact} ${arrow}</a></nav>
     <div class="language-switch" aria-label="Language"><span aria-current="page">${lang.toUpperCase()}</span><a href="${other}" class="language-link" hreflang="${lang === 'ru' ? 'en' : 'ru'}" lang="${lang === 'ru' ? 'en' : 'ru'}">${lang === 'ru' ? 'EN' : 'RU'}</a></div>
   </div></header>
   <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span>${t.eyebrow}</p><h1 id="hero-title">${t.hero}</h1><p class="hero-description">${t.intro}</p><div class="hero-actions"><a class="primary-button" href="#arrows-cube">${t.cta}${arrow}</a><span class="android-label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m6.4 4.2-1-1.6.8-.5 1.1 1.7a9.8 9.8 0 0 1 9.4 0l1.1-1.7.8.5-1 1.6A8.7 8.7 0 0 1 22 11H2a8.7 8.7 0 0 1 4.4-6.8ZM7 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM3 13h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>${t.platform}</span></div></div>
-      <div class="hero-art hero-art--single"><span class="orbit orbit-one" aria-hidden="true"></span><span class="orbit orbit-two" aria-hidden="true"></span>
-        ${t.gamesData.map(g => `<a class="hero-phone hero-phone--${g.theme}" href="#${g.id}" aria-label="${g.english}">${picture(g.images[0], g.english, true, '(max-width: 600px) 46vw, 225px')}<span>${g.english}${arrow}</span></a>`).join('')}
+    <section class="hero wrap" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span>${t.eyebrow}</p><h1 id="hero-title">${t.hero}</h1><p class="hero-description">${t.intro}</p><div class="hero-actions"><a class="primary-button" href="#games">${t.cta}${arrow}</a><span class="android-label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m6.4 4.2-1-1.6.8-.5 1.1 1.7a9.8 9.8 0 0 1 9.4 0l1.1-1.7.8.5-1 1.6A8.7 8.7 0 0 1 22 11H2a8.7 8.7 0 0 1 4.4-6.8ZM7 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM3 13h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>${t.platform}</span></div></div>
+      <div class="hero-art" aria-label="${t.deck}"><span class="orbit orbit-one" aria-hidden="true"></span><span class="orbit orbit-two" aria-hidden="true"></span>
+        ${t.gamesData.map(g => `<a class="hero-phone hero-phone--${g.theme}" href="#${g.id}" aria-label="${g.english}">${picture(g.images[0], g.english, true, '(max-width: 600px) 30vw, 210px')}<span>${g.english}${arrow}</span></a>`).join('')}
+        <span class="hero-sticker">${t.deck}<svg viewBox="0 0 50 45" fill="none" aria-hidden="true"><path d="M5 10c32-21 49 13 25 29m0 0 1-12m-1 12 12-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
     </section>
-    <div class="collection wrap">${t.gamesData.map(g => renderGame(g, t)).join('')}</div>
+    <div class="game-index wrap">${t.gamesData.map(g => `<a href="#${g.id}"><span class="index-number">${g.number}</span><span class="index-text"><strong>${lang === 'ru' && g.theme === 'hanoi' ? 'Ханойские башни' : g.english}</strong><small>${g.short}</small></span>${arrow}</a>`).join('')}</div>
+    <section class="collection wrap" id="games" aria-labelledby="collection-title"><div class="section-heading"><div><p class="eyebrow">${t.small}</p><h2 id="collection-title">${t.collection}</h2></div><p>${t.collectionText}</p></div>${t.gamesData.map(g => renderGame(g, t)).join('')}</section>
     <section class="studio wrap" id="studio" aria-labelledby="studio-title"><div class="studio-visual" aria-hidden="true"><span class="studio-monogram">dt<span>↗</span></span><span class="studio-ring"></span><span class="studio-star">✳</span><span class="studio-caption">INDEPENDENT<br>& CURIOUS</span></div><div><p class="eyebrow">${t.studioLabel}</p><h2 id="studio-title">${t.studioTitle}</h2><p>${t.studioText}</p><a class="text-link" href="mailto:bobrmen94@yandex.ru">${t.contact}${arrow}</a></div></section>
     <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">${t.contactLabel}</p><h2 id="contact-title">${t.contactTitle}</h2></div><a href="mailto:bobrmen94@yandex.ru">bobrmen94@yandex.ru${arrow}</a></section>
   </main>
-  <footer class="site-footer wrap"><div><a class="footer-brand" href="#top">Doktor Tapok Games</a><p>${t.footer}</p></div><div class="footer-links"><a href="https://doktor-tapok-games.doktortapok94.chatgpt.site${lang === 'en' ? '/en/' : '/'}">${lang === 'ru' ? 'Другие игры' : 'Other games'}</a><a href="/app-ads.txt">app-ads.txt${arrow}</a><a class="language-link" href="${other}" hreflang="${lang === 'ru' ? 'en' : 'ru'}">${lang === 'ru' ? 'English' : 'Русский'}</a><a href="#top">${t.top} ↑</a></div><p class="copyright">© 2026 Doktor Tapok Games</p></footer>
+  <footer class="site-footer wrap"><div><a class="footer-brand" href="#top">Doktor Tapok Games</a><p>${t.footer}</p></div><div class="footer-links"><a href="/app-ads.txt">app-ads.txt${arrow}</a><a class="language-link" href="${other}" hreflang="${lang === 'ru' ? 'en' : 'ru'}">${lang === 'ru' ? 'English' : 'Русский'}</a><a href="#top">${t.top} ↑</a></div><p class="copyright">© 2026 Doktor Tapok Games</p></footer>
   <dialog class="lightbox" aria-label="${t.screenshots}"><div class="lightbox-toolbar"><span class="lightbox-counter"></span><button class="lightbox-close icon-button" aria-label="${t.close}">✕</button></div><div class="lightbox-stage"><button class="lightbox-prev icon-button" aria-label="${t.previous}">${chevron}</button><img class="lightbox-image" alt=""><button class="lightbox-next icon-button" aria-label="${t.next}">${chevron}</button></div><p class="lightbox-caption"></p></dialog>
 </body></html>`;
   const folder = lang === 'ru' ? dist : path.join(dist, 'en');
@@ -145,5 +445,5 @@ for (const lang of ['ru', 'en']) {
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${origin}/</loc></url><url><loc>${origin}/en/</loc></url></urlset>\n`);
 await writeFile(path.join(dist, '.nojekyll'), '');
-await writeFile(path.join(dist, '404.html'), '<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>404 — Arrows Cube</title><link rel="stylesheet" href="/assets/site.css"><body><main class="not-found wrap"><p class="eyebrow">404</p><h1>Кажется, здесь нет хода.</h1><p>This page does not exist.</p><a class="primary-button" href="/">На главную / Home ↗</a></main></body></html>');
+await writeFile(path.join(dist, '404.html'), '<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>404 — Doktor Tapok Games</title><link rel="stylesheet" href="/assets/site.css"><body><main class="not-found wrap"><p class="eyebrow">404</p><h1>Кажется, здесь нет хода.</h1><p>This page does not exist.</p><a class="primary-button" href="/">На главную / Home ↗</a></main></body></html>');
 console.log('Built Russian and English static pages. app-ads.txt is untouched.');

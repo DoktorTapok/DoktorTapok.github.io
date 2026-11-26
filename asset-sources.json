@@ -118,5 +118,141 @@
       1080,
       1920
     ]
+  },
+  {
+    "name": "hanoi-ru-1",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-01-colors.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-2",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-02-mystery.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-3",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-03-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-ru-4",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-ru-04-win.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-1",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-01-colors.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-2",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-02-mystery.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-3",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-03-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-en-4",
+    "source": "HanoyTower/marketing/2026-10/raw/phone-en-04-win.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "hanoi-icon",
+    "source": "HanoyTower/marketing/2026-10/branding/app-icon-512.png",
+    "originalSize": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "cascade-ru-1-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/ru/01-clear-the-way.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-ru-2-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/ru/02-5000-levels.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-ru-3-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/ru/03-new-mechanics.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-ru-4-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/ru/04-unlock-your-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-en-1-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/en/01-clear-the-way.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-en-2-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/en/02-5000-levels.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-en-3-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/en/03-new-mechanics.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "name": "cascade-en-4-202611",
+    "source": "ArrowPuzzle/Docs/Publishing/2026-11-25-v1/en/04-unlock-your-style.png",
+    "originalSize": [
+      1080,
+      1920
+    ]
   }
 ]
